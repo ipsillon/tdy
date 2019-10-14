@@ -37,4 +37,10 @@ class EixoController extends Controller
         Eixo::find($id)->update($request->all());
         return redirect()->route('admin.eixos');
     }
+
+    public function deletar($id)
+    {
+        Eixo::find($id)->delete();
+        return redirect()->route('admin.eixos');
+    }
 }

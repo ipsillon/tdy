@@ -12,7 +12,7 @@
         
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Eixos</h3>
+                <h3 class="box-title">Segmentos</h3>
 
                 <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
@@ -33,14 +33,14 @@
                     <th style="width:10%">Ações</th>
                     </tr>
 
-                    @foreach($eixos as $eixo) 
+                    @foreach($segmentos as $segmento) 
                     
                         <tr>
-                            <td>{{$eixo->id}}</td>
-                            <td>{{$eixo->nome}}</td>
+                            <td>{{$segmento->id}}</td>
+                            <td>{{$segmento->nome}}</td>
                             <td>
-                                <a class="btn btn-default btn-xs" href="{{route('admin.eixos.editar', $eixo->id)}}"><i class="fa fa-fw fa-edit"></i></a>
-                                <a onclick="return confirm('Deseja prosseguir?')" class="btn btn-default btn-xs" href="{{route('admin.eixos.deletar', $eixo->id)}}"><i class="fa fa-fw fa-trash"></i></a>
+                                <a class="btn btn-default btn-xs" href="{{route('admin.segmentos.editar', $segmento->id)}}"><i class="fa fa-fw fa-edit"></i></a>
+                                <a onclick="return confirm('Deseja prosseguir?')" class="btn btn-default btn-xs" href="{{route('admin.segmentos.deletar', $segmento->id)}}"><i class="fa fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                 
@@ -50,7 +50,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
-                <a href="{{route('admin.eixos.adicionar')}}" class="btn btn-default pull-left"><i class="fa fa-plus"></i> Novo Eixo</a>
+                <a href="{{route('admin.segmentos.adicionar')}}" class="btn btn-default pull-left"><i class="fa fa-plus"></i> Novo Segmento</a>
 
                 <ul class="pagination pagination-sm no-margin pull-right">
                     <li><a href="#">«</a></li>

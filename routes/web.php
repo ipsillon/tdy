@@ -31,6 +31,19 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('eixos/atualizar/{id}', ['uses' => '\App\Http\Controllers\Admin\EixoController@atualizar', 'as' => 'admin.eixos.atualizar']);
         Route::get('eixos/deletar/{id}', ['uses' => '\App\Http\Controllers\Admin\EixoController@deletar', 'as' => 'admin.eixos.deletar']);
 
+        Route::get('itens', ['uses' => '\App\Http\Controllers\Admin\ItemController@index', 'as' => 'admin.itens']);
+        Route::get('itens/adicionar', ['uses' => '\App\Http\Controllers\Admin\ItemController@adicionar', 'as' => 'admin.itens.adicionar']);
+        Route::post('itens/salvar', ['uses' => '\App\Http\Controllers\Admin\ItemController@salvar', 'as' => 'admin.itens.salvar']);
+        Route::get('itens/editar/{id}', ['uses' => '\App\Http\Controllers\Admin\ItemController@editar', 'as' => 'admin.itens.editar']);
+        Route::put('itens/atualizar/{id}', ['uses' => '\App\Http\Controllers\Admin\ItemController@atualizar', 'as' => 'admin.itens.atualizar']);
+        Route::get('itens/deletar/{id}', ['uses' => '\App\Http\Controllers\Admin\ItemController@deletar', 'as' => 'admin.itens.deletar']);
+
+        Route::get('segmentos', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@index', 'as' => 'admin.segmentos']);
+        Route::get('segmentos/adicionar', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@adicionar', 'as' => 'admin.segmentos.adicionar']);
+        Route::post('segmentos/salvar', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@salvar', 'as' => 'admin.segmentos.salvar']);
+        Route::get('segmentos/editar/{id}', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@editar', 'as' => 'admin.segmentos.editar']);
+        Route::put('segmentos/atualizar/{id}', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@atualizar', 'as' => 'admin.segmentos.atualizar']);
+        Route::get('segmentos/deletar/{id}', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@deletar', 'as' => 'admin.segmentos.deletar']);
     });
     
 });

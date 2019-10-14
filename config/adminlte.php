@@ -138,7 +138,7 @@ return [
         ],
         [
             'text'        => 'Segmento',
-            'url'         => 'admin/segmento',
+            'url'         => 'admin/segmentos',
             'icon'        => 'far fa-file'
         ],
         'Configurações',

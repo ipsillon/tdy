@@ -12,7 +12,7 @@
         
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Eixos</h3>
+                <h3 class="box-title">Itens</h3>
 
                 <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
@@ -33,14 +33,14 @@
                     <th style="width:10%">Ações</th>
                     </tr>
 
-                    @foreach($eixos as $eixo) 
+                    @foreach($itens as $item) 
                     
                         <tr>
-                            <td>{{$eixo->id}}</td>
-                            <td>{{$eixo->nome}}</td>
+                            <td>{{$item->id}}</td>
+                            <td>{{$item->nome}}</td>
                             <td>
-                                <a class="btn btn-default btn-xs" href="{{route('admin.eixos.editar', $eixo->id)}}"><i class="fa fa-fw fa-edit"></i></a>
-                                <a onclick="return confirm('Deseja prosseguir?')" class="btn btn-default btn-xs" href="{{route('admin.eixos.deletar', $eixo->id)}}"><i class="fa fa-fw fa-trash"></i></a>
+                                <a class="btn btn-default btn-xs" href="{{route('admin.itens.editar', $item->id)}}"><i class="fa fa-fw fa-edit"></i></a>
+                                <a onclick="return confirm('Deseja prosseguir?')" class="btn btn-default btn-xs" href="{{route('admin.itens.deletar', $item->id)}}"><i class="fa fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                 
@@ -50,7 +50,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
-                <a href="{{route('admin.eixos.adicionar')}}" class="btn btn-default pull-left"><i class="fa fa-plus"></i> Novo Eixo</a>
+                <a href="{{route('admin.itens.adicionar')}}" class="btn btn-default pull-left"><i class="fa fa-plus"></i> Novo Item</a>
 
                 <ul class="pagination pagination-sm no-margin pull-right">
                     <li><a href="#">«</a></li>
