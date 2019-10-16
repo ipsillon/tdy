@@ -44,6 +44,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('segmentos/editar/{id}', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@editar', 'as' => 'admin.segmentos.editar']);
         Route::put('segmentos/atualizar/{id}', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@atualizar', 'as' => 'admin.segmentos.atualizar']);
         Route::get('segmentos/deletar/{id}', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@deletar', 'as' => 'admin.segmentos.deletar']);
+
+        Route::get('eixos-itens', ['uses' => '\App\Http\Controllers\Admin\EixoItemController@index', 'as' => 'admin.eixos-itens']);
+        
     });
     
 });

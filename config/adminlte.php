@@ -144,7 +144,7 @@ return [
         'Configurações',
         [
             'text'        => 'Eixo/Item',
-            'url'         => 'admin/eixo-item   ',
+            'url'         => 'admin/eixos-itens   ',
             'icon'        => 'fas fa-cogs'
         ],
         [
