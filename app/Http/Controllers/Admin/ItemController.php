@@ -22,7 +22,6 @@ class ItemController extends Controller
 
     public function salvar(ItemRequest $request) 
     {
-        $request->validated();
         Item::create($request->all());
         return redirect()->route('admin.itens');
     }
@@ -35,7 +34,6 @@ class ItemController extends Controller
 
     public function atualizar(ItemRequest $request, $id)
     {
-        $request->validated();
         Item::find($id)->update($request->all());
         return redirect()->route('admin.itens');
     }

@@ -22,7 +22,6 @@ class EixoController extends Controller
 
     public function salvar(EixoRequest $request) 
     {
-        $request->validated();
         Eixo::create($request->all());
         return redirect()->route('admin.eixos');
     }
@@ -35,7 +34,6 @@ class EixoController extends Controller
 
     public function atualizar(EixoRequest $request, $id)
     {
-        $request->validated();
         Eixo::find($id)->update($request->all());
         return redirect()->route('admin.eixos');
     }
