@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('segmentos/deletar/{id}', ['uses' => '\App\Http\Controllers\Admin\SegmentoController@deletar', 'as' => 'admin.segmentos.deletar']);
 
         Route::get('eixos-itens', ['uses' => '\App\Http\Controllers\Admin\EixoItemController@index', 'as' => 'admin.eixos-itens']);
+        Route::put('eixos-itens/salvar', ['uses' => '\App\Http\Controllers\Admin\EixoItemController@salvar', 'as' => 'admin.eixos-itens.salvar']);
         
     });
     

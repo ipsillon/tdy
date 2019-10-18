@@ -8,6 +8,14 @@
 @section('content')
 
 
+<!-- form start -->
+    <form role="form" action="{{route('admin.eixos-itens.salvar')}}" method="post">
+
+    <input type="hidden" name="_method" value="put">
+            
+    {{csrf_field()}}
+
+
     @foreach($eixos as $eixo)
 
         <div class="box box-default">
@@ -27,11 +35,9 @@
 
                             <label>Itens</label>
 
-                            <select class="form-control select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                            <select name="eixo-{{$eixo->id}}[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione itens para o {{$eixo->nome}}">
                                 @foreach($itens as $item)
-
                                     <option value="{{$item->id}}">{{$item->nome}}</option> 
-
                                 @endforeach
                             </select>
                             
@@ -49,6 +55,10 @@
       </div>
 
     @endforeach
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+
+    </form>
 
 @stop
 
