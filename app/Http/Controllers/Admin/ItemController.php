@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\ItemRequest;
 use App\Item;
 
 class ItemController extends Controller
@@ -20,8 +20,9 @@ class ItemController extends Controller
         return view('admin.itens.adicionar');
     }
 
-    public function salvar(Request $request) 
+    public function salvar(ItemRequest $request) 
     {
+        $request->validated();
         Item::create($request->all());
         return redirect()->route('admin.itens');
     }
@@ -32,8 +33,9 @@ class ItemController extends Controller
         return view('admin.itens.editar', compact('item'));
     }
 
-    public function atualizar(Request $request, $id)
+    public function atualizar(ItemRequest $request, $id)
     {
+        $request->validated();
         Item::find($id)->update($request->all());
         return redirect()->route('admin.itens');
     }

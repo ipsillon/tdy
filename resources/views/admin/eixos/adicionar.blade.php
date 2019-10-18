@@ -18,12 +18,12 @@
                 {{csrf_field()}}
 
                 <div class="box-body">
-                    <div class="form-group">
-
+                    <div class="form-group {{$errors->has('nome')?'has-error':''}}">
                         <label for="nome">Nome do eixo</label>
-                        
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do eixo">
-
+                        <input type="text" class="form-control" id="nome" name="nome" value="{{old('nome')}}" placeholder="Nome do eixo">
+                        <span class="help-block">
+                            {{$errors->first('nome')}}
+                        </span>
                     </div>
 
                 </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\EixoRequest;
 use App\Eixo;
 
 class EixoController extends Controller
@@ -20,8 +20,9 @@ class EixoController extends Controller
         return view('admin.eixos.adicionar');
     }
 
-    public function salvar(Request $request) 
+    public function salvar(EixoRequest $request) 
     {
+        $request->validated();
         Eixo::create($request->all());
         return redirect()->route('admin.eixos');
     }
@@ -32,8 +33,9 @@ class EixoController extends Controller
         return view('admin.eixos.editar', compact('eixo'));
     }
 
-    public function atualizar(Request $request, $id)
+    public function atualizar(EixoRequest $request, $id)
     {
+        $request->validated();
         Eixo::find($id)->update($request->all());
         return redirect()->route('admin.eixos');
     }

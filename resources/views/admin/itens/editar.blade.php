@@ -20,9 +20,12 @@
 
                 <div class="box-body">
 
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('nome')?'has-error':''}}">
                         <label for="nome">Nome do item</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="{{$item->nome}}"" placeholder="Nome do item">
+                        <input type="text" class="form-control" id="nome" name="nome" value="{{$errors->has('nome')? old('nome') : $item->nome}}" placeholder="Nome do item">
+                        <span class="help-block">
+                            {{$errors->first('nome')}}
+                        </span>
                     </div>
 
                 </div>
