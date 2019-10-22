@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Item;
 
 class EixoItem extends Model
 {
@@ -13,4 +14,5 @@ class EixoItem extends Model
         'eixo_id', 
         'item_id'
     ];
+    
 }

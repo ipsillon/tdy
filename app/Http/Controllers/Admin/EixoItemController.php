@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Eixo;
 use App\Item;
 use App\EixoItem;
+use Illuminate\Support\Arr;
 
 class EixoItemController extends Controller
 {
@@ -14,6 +15,7 @@ class EixoItemController extends Controller
     public function index() 
     {
         $eixos = Eixo::orderBy('id')->get();
+
         $itens = Item::orderBy('id')->get();
 
         return view('admin.eixos-itens.index', compact('eixos', 'itens'));
@@ -25,14 +27,16 @@ class EixoItemController extends Controller
         $eixos   = Eixo::orderBy('id')->get();
 
         foreach($eixos as $eixo) {
-            foreach($request['eixo-' . $eixo->id] as $item) {
-                EixoItem::create([
-                    'eixo_id' => $eixo->id,
-                    'item_id' => $item
-                ]);                        
+            $eixo->itens()->delete();
+            if (isset($request['eixo-' . $eixo->id])) {
+                foreach($request['eixo-' . $eixo->id] as $item) {
+                    EixoItem::create([
+                        'eixo_id' => $eixo->id,
+                        'item_id' => $item
+                    ]);                        
+                }
             }
         }
-
         return redirect()->route('admin.eixos-itens');
     }
 
