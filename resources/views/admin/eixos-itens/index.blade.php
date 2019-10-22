@@ -37,7 +37,7 @@
 
                             <select name="eixo-{{$eixo->id}}[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione itens para o {{$eixo->nome}}">
                                 @foreach($itens as $item)
-                                    <option value="{{$item->id}}">{{$item->nome}}</option> 
+                                    <option value="{{$item->id}}" {{$eixo->itens->contains('item_id', $item->id) ? 'selected' : ''}}>{{$item->nome}}</option> 
                                 @endforeach
                             </select>
                             
